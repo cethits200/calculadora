@@ -1,6 +1,6 @@
 {
-  "name": "Calculadora Drogas · Turno 6",
-  "short_name": "Turno 6",
+  "name": "Calculadora T6",
+  "short_name": "Calculadora T6",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
