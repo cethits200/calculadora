@@ -1,4 +1,4 @@
-const CACHE = 'turno6-v11';
+const CACHE = 'turno6-v12';
 const ASSETS = [
   './manifest.json',
   './icon-192.png',
