@@ -1,46 +1,30 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#061326"><link rel="manifest" href="./manifest.json"><link rel="apple-touch-icon" href="./icon-192.png"><title>Calculadora Drogas · Turno 6</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#17130a"><link rel="manifest" href="./manifest.json"><link rel="apple-touch-icon" href="./icon-192.png"><title>Calculadora Drogas · Turno 6</title>
 <style>
 *{box-sizing:border-box}
-:root{--blue:#078cff;--cyan:#36d7ff;--navy:#03142b;--deep:#020a17;--white:#f7fbff}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--white);
-background:
-radial-gradient(circle at 0 0,#1589ee 0,#0756b4 18%,#062b63 38%,#020b18 72%),
-linear-gradient(145deg,#0a7fe8,#020a17 70%);min-height:100vh}
+:root{--gold:#ffca23;--gold-light:#ffe477;--gold-deep:#bd8500;--black:#080808;--panel:#141414;--white:#fffdf4}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--white);background:radial-gradient(circle at 0 0,#4c3b0b 0,#211b0c 22%,#111111 48%,#050505 85%),linear-gradient(145deg,#40300a,#080808 70%);min-height:100vh}
 .wrap{max-width:520px;margin:auto;padding:14px 14px 38px}
-.head{position:relative;text-align:center;border:1px solid #25b8ff;border-radius:24px;padding:24px 12px 20px;margin-bottom:16px;
-background:linear-gradient(145deg,#1176d9 0,#074c9f 32%,#031a38 67%,#020914 100%);
-box-shadow:0 0 32px #0ba8ff55 inset,0 12px 34px #0008}
-.head h1{margin:22px 0 0;font-size:29px;line-height:1;font-weight:950;letter-spacing:.3px;color:white;
-text-shadow:0 0 16px #45baff,0 2px 0 #064e99}
-.corner{position:absolute;top:10px;padding:7px 9px;border:1px solid #5dd8ff;border-radius:10px;
-background:linear-gradient(145deg,#087bea,#04285c);box-shadow:0 0 14px #20bfff55 inset;font-size:10px;
-line-height:1.15;font-weight:950;color:#fff;text-transform:uppercase}
-.corner.left{left:10px;text-align:left;max-width:105px;padding:5px 7px;
-font-size:8px;line-height:1.08;border-radius:8px}
-.corner.right{right:10px;text-align:center;min-width:72px}
-.card{background:linear-gradient(160deg,#061d3add,#020b17f2);border:1px solid #159cff;border-radius:22px;padding:18px;
-box-shadow:0 14px 40px #0009,0 0 22px #087fff22 inset}
-.field{margin-bottom:15px} label{display:block;font-weight:900;margin-bottom:7px;color:#fff}
-select,input{width:100%;font-size:17px;padding:14px;border:1px solid #269eea;border-radius:13px;background:#041429;color:#fff;outline:none;
-box-shadow:inset 0 0 12px #0a7fd622}
+.head{position:relative;text-align:center;border:1px solid #f6c43c;border-radius:24px;padding:22px 10px 16px;margin-bottom:16px;min-height:112px;overflow:visible;isolation:isolate;background:linear-gradient(145deg,#53410d 0,#29220f 30%,#111111 67%,#070707 100%);box-shadow:0 0 28px #f0b51a35 inset,0 12px 34px #000a}
+.head h1{position:relative;z-index:2;margin:23px 0 0 100px;font-size:clamp(16px,4.5vw,24px);white-space:nowrap;line-height:1;font-weight:950;letter-spacing:.3px;color:#fff;text-shadow:0 0 13px #f9c735a0,0 2px 0 #332700}
+.corner{position:absolute;top:10px;padding:7px 9px;border:1px solid #ffdc67;border-radius:10px;background:linear-gradient(145deg,#a67a08,#2b220b);box-shadow:0 0 12px #ffd24944 inset;font-size:10px;line-height:1.15;font-weight:950;color:#fff;text-transform:uppercase}
+.corner.right{right:10px;text-align:center;min-width:72px;z-index:3}
+.card{background:linear-gradient(160deg,#1e1b12f5,#0b0b0bf8);border:1px solid #dcae29;border-radius:22px;padding:18px;box-shadow:0 14px 40px #000a,0 0 22px #d5a51c20 inset}
+.field{margin-bottom:15px}label{display:block;font-weight:900;margin-bottom:7px;color:#fff}
+select,input{width:100%;font-size:17px;padding:14px;border:1px solid #caa02c;border-radius:13px;background:#0b0b0b;color:#fff;outline:none;box-shadow:inset 0 0 12px #d3a22320}
+select:focus,input:focus{border-color:#ffe17b;box-shadow:0 0 0 2px #e8b82750}
 .drugframe{display:flex;justify-content:center;margin:14px 0 18px}
-.drugpic{display:block;width:205px;height:128px;object-fit:cover;object-position:center;border-radius:13px;border:2px solid #30c8ff;background:transparent;box-shadow:0 0 0 2px #ffffff22,0 0 16px #0aa7ff55;padding:0}
-button{width:100%;border:1px solid #7be8ff;border-radius:14px;background:linear-gradient(100deg,#0862d4,#0d9cff 55%,#0755b8);
-color:#fff;font-size:18px;font-weight:950;padding:15px;cursor:pointer;box-shadow:0 0 22px #0aa7ff66}
-.result{margin-top:17px;border-radius:18px;padding:12px;background:#041429;border:1px solid #258fd0;display:none;text-align:center}
-.result img{width:100%;max-height:360px;object-fit:contain;border-radius:14px;margin-bottom:10px;background:#020914}
-.result h2{font-size:19px;margin:0 0 7px}.result p{margin:0;color:#d9efff}
-.result.warn{border-color:#ff5667}.result.warn h2{color:#ff8790}
-.result.good{border-color:#2acfff}.result.good h2{color:#7ce7ff}
-.ref{text-align:center;font-size:13px;color:#a9d9ff;margin:13px 0 0}.install{margin-top:12px;display:none}
-
-/* Escudo integrado dentro de la cabecera, sin sobresalir del marco */
-.head{overflow:hidden;min-height:112px;padding:22px 10px 16px;isolation:isolate}
+.drugpic{display:block;width:205px;height:128px;object-fit:cover;object-position:center;border-radius:13px;border:2px solid #ffca23;background:transparent;box-shadow:0 0 0 2px #ffffff20,0 0 16px #eab52e55;padding:0}
+button{width:100%;border:1px solid #ffe889;border-radius:14px;background:linear-gradient(100deg,#b77d00,#ffd33f 55%,#bc8808);color:#101010;font-size:18px;font-weight:950;padding:15px;cursor:pointer;box-shadow:0 0 22px #ffc62955}
+button:active{filter:brightness(.88)}
+.result{margin-top:17px;border-radius:18px;padding:12px;background:#11100b;border:1px solid #cda02a;display:none;text-align:center}
+.result img{width:100%;max-height:360px;object-fit:contain;border-radius:14px;margin-bottom:10px;background:#080808}
+.result h2{font-size:19px;margin:0 0 7px}.result p{margin:0;color:#fff2c8}
+.result.warn{border-color:#f08c53}.result.warn h2{color:#ffad78}
+.result.good{border-color:#f5cb42}.result.good h2{color:#ffe077}
+.ref{text-align:center;font-size:13px;color:#e5d5a4;margin:13px 0 0}.install{margin-top:12px;display:none}
 .head .header-patch{position:absolute;left:-12px;top:-19px;width:134px;height:158px;object-fit:contain;transform:rotate(-10deg);transform-origin:center;z-index:1;filter:drop-shadow(0 4px 7px #000b)}
-.head h1{position:relative;z-index:2;margin:23px 0 0 100px;font-size:clamp(16px,4.5vw,24px);white-space:nowrap}
-.head .corner.right{z-index:3}
 @media(max-width:380px){.head .header-patch{width:115px;height:138px;left:-10px;top:-14px}.head h1{margin-left:88px;font-size:clamp(15px,4.1vw,21px)}}
 </style></head>
 <body><main class="wrap"><section class="head"><img class="header-patch" src="./assets/parche-dunas.png" alt="Parche DUNAS GAC Maspalomas"><div class="corner right">TURNO 6</div><h1>CALCULADORA DROGAS</h1></section><section class="card"><div class="field"><label for="drug">Sustancia</label><select id="drug">
-<option value="3|g|heroina">Heroína</option><option value="7.5|g|cocaina">Cocaína</option><option value="100|g|marihuana">Marihuana</option><option value="25|g|hachis">Hachís</option><option value="2.4|g|mdma">MDMA (éxtasis)</option><option value="0.3|g|metanfetamina">Metanfetamina</option><option value="0.003|g|lsd">LSD</option><option value="12.5|ml|ghb">GHB / GBL</option><option value="2.4|g|mefedrona">Mefedrona (4-MMC)</option><option value="2.6|g|tusi">Tusi / cocaína rosa</option></select></div><div class="drugframe"><img id="drugpic" class="drugpic" alt=""></div><div class="field"><label for="amount">Cantidad</label><input id="amount" type="number" min="0" step="any" inputmode="decimal"></div><button id="calc">CALCULAR</button><button id="install" class="install">INSTALAR APP</button><div id="result" class="result"><img id="resultpic" alt=""><h2 id="status"></h2><p id="detail"></p></div><p class="ref" style="opacity:.55">Calculadora T6 · v12</p></section></main>
-<script>const drug=document.querySelector('#drug'),amount=document.querySelector('#amount'),pic=document.querySelector('#drugpic'),result=document.querySelector('#result'),resultpic=document.querySelector('#resultpic'),status=document.querySelector('#status'),detail=document.querySelector('#detail');function data(){const[limit,unit,key]=drug.value.split('|');return{limit:+limit,unit,key,name:drug.options[drug.selectedIndex].text}}function update(){const d=data();pic.src=`./assets/${d.key}.jpg?v=12`;pic.alt=`Imagen orientativa: ${d.name}`;amount.placeholder=`Cantidad en ${d.unit}`;result.style.display='none'}function calc(){const d=data(),v=Number(amount.value);result.style.display='block';if(!Number.isFinite(v)||v<=0){result.className='result warn';resultpic.src='./assets/boletin.png';status.textContent='Cantidad no válida';detail.textContent='Introduce una cantidad mayor que cero.';return}if(v<=d.limit){result.className='result good';resultpic.src='./assets/boletin.png';resultpic.alt='Boletín sancionador';status.textContent='POSIBLE SANCIÓN ADMINISTRATIVA';detail.textContent=`${v} ${d.unit} · referencia: ${d.limit} ${d.unit}`}else{result.className='result warn';resultpic.src='./assets/detencion.png';resultpic.alt='Grilletes';status.textContent='POSIBLE RELEVANCIA PENAL';detail.textContent=`${v} ${d.unit} · supera la referencia de ${d.limit} ${d.unit}`}}drug.addEventListener('change',update);document.querySelector('#calc').addEventListener('click',calc);amount.addEventListener('keydown',e=>{if(e.key==='Enter')calc()});update();if('serviceWorker'in navigator)navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'});let promptEvent;const install=document.querySelector('#install');window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();promptEvent=e;install.style.display='block'});install.addEventListener('click',async()=>{if(promptEvent){promptEvent.prompt();await promptEvent.userChoice;promptEvent=null;install.style.display='none'}});</script></body></html>
+<option value="3|g|heroina">Heroína</option><option value="7.5|g|cocaina">Cocaína</option><option value="100|g|marihuana">Marihuana</option><option value="25|g|hachis">Hachís</option><option value="2.4|g|mdma">MDMA (éxtasis)</option><option value="0.3|g|metanfetamina">Metanfetamina</option><option value="0.003|g|lsd">LSD</option><option value="12.5|ml|ghb">GHB / GBL</option><option value="2.4|g|mefedrona">Mefedrona (4-MMC)</option><option value="2.6|g|tusi">Tusi / cocaína rosa</option></select></div><div class="drugframe"><img id="drugpic" class="drugpic" alt=""></div><div class="field"><label for="amount">Cantidad</label><input id="amount" type="number" min="0" step="any" inputmode="decimal"></div><button id="calc">CALCULAR</button><button id="install" class="install">INSTALAR APP</button><div id="result" class="result"><img id="resultpic" alt=""><h2 id="status"></h2><p id="detail"></p></div><p class="ref" style="opacity:.55">Calculadora T6 · v13</p></section></main>
+<script>const drug=document.querySelector('#drug'),amount=document.querySelector('#amount'),pic=document.querySelector('#drugpic'),result=document.querySelector('#result'),resultpic=document.querySelector('#resultpic'),status=document.querySelector('#status'),detail=document.querySelector('#detail');function data(){const[limit,unit,key]=drug.value.split('|');return{limit:+limit,unit,key,name:drug.options[drug.selectedIndex].text}}function update(){const d=data();pic.src=`./assets/${d.key}.jpg?v=13`;pic.alt=`Imagen orientativa: ${d.name}`;amount.placeholder=`Cantidad en ${d.unit}`;result.style.display='none'}function calc(){const d=data(),v=Number(amount.value);result.style.display='block';if(!Number.isFinite(v)||v<=0){result.className='result warn';resultpic.src='./assets/boletin.png';status.textContent='Cantidad no válida';detail.textContent='Introduce una cantidad mayor que cero.';return}if(v<=d.limit){result.className='result good';resultpic.src='./assets/boletin.png';resultpic.alt='Boletín sancionador';status.textContent='POSIBLE SANCIÓN ADMINISTRATIVA';detail.textContent=`${v} ${d.unit} · referencia: ${d.limit} ${d.unit}`}else{result.className='result warn';resultpic.src='./assets/detencion.png';resultpic.alt='Grilletes';status.textContent='POSIBLE RELEVANCIA PENAL';detail.textContent=`${v} ${d.unit} · supera la referencia de ${d.limit} ${d.unit}`}}drug.addEventListener('change',update);document.querySelector('#calc').addEventListener('click',calc);amount.addEventListener('keydown',e=>{if(e.key==='Enter')calc()});update();if('serviceWorker'in navigator)navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'});let promptEvent;const install=document.querySelector('#install');window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();promptEvent=e;install.style.display='block'});install.addEventListener('click',async()=>{if(promptEvent){promptEvent.prompt();await promptEvent.userChoice;promptEvent=null;install.style.display='none'}});</script></body></html>
