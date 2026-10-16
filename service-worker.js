@@ -1,8 +1,9 @@
-const CACHE = 'turno6-v9';
+const CACHE = 'turno6-v11';
 const ASSETS = [
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
+  './assets/parche-dunas.png',
   './assets/boletin.png',
   './assets/detencion.png',
   './assets/heroina.jpg',
@@ -10,8 +11,6 @@ const ASSETS = [
   './assets/marihuana.jpg',
   './assets/hachis.jpg',
   './assets/mdma.jpg',
-  './assets/mda.jpg',
-  './assets/mdea.jpg',
   './assets/metanfetamina.jpg',
   './assets/lsd.jpg',
   './assets/ghb.jpg',
